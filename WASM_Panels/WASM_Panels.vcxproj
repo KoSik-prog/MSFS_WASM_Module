@@ -47,6 +47,7 @@
     <GenerateManifest />
     <LinkIncremental />
     <IncludePath>$(MSFS_IncludePath)</IncludePath>
+    <CustomBuildAfterTargets />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|MSFS'">
     <TargetExt>.wasm</TargetExt>
@@ -99,8 +100,8 @@
       <AdditionalLibraryDirectories>$(MSFS_SDK)\SimConnect SDK\lib;$(OutDir)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo F | xcopy /Y /F "$(TargetPath)" "C:\Users\jwali\Documents\Marcin\KoSikWASMModule\PackageSources\modules"</Command>
+      <Message>Copy</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|MSFS'">
